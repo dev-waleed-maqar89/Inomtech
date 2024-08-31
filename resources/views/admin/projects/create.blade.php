@@ -97,6 +97,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="department">Choose department</label>
+                            <select class="form-control" name="department_id" id="department">
+                                @forelse ($departments as $department)
+                                    <option value="{{ $department->id }}">{{ $department->name_en }}</option>
+                                @empty
+                                @endforelse
+                            </select>
+                        </div>
+
                     </div>
                     <!-- /.card-body -->
 
