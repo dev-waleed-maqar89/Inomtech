@@ -2,71 +2,72 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Traits\ImageTrait;
+use App\Models\Department;
+use App\Models\DepartmentProject;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    
+
+    use ImageTrait;
+
+    public function index()
+    {
 
 
-    public function index() {
-
-      
-    $projects = Project::orderBy('created_at', 'desc')->get();
+        $projects = Project::orderBy('created_at', 'desc')->get();
 
 
-        return view('admin.projects.index',compact('projects'));
-
-
+        return view('admin.projects.index', compact('projects'));
     }
 
 
 
-    public function createPage() {
-
-        return view('admin.projects.create');
+    public function create()
+    {
+        $departments = Department::all();
+        return view('admin.projects.create', compact('departments'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
+        $path = '';
+        if ($request->hasFile('image')) {
+            $img = $request->file('image');
+            $img = $this->singleImageUpload($img, 'projects', $request->name);
+            $path = $img->getPathname();
+        }
 
+        $project =  Project::create([
 
-       $img= time().'.'.$request->image->extension();
-
-        $request->image->storeAs('public/img', $img);
-
-
-
-
-
-
-
-        Project::create([
-
-            'name' => $request->name,
-            'content' => $request->content,
+            'name_en' => $request->name_en,
+            'name_ar' => $request->name_ar,
+            'content_en' => $request->content_en,
+            'content_ar' => $request->content_ar,
             'link' => $request->link,
-            'image' => $img,
-
-
-
-
+            'image' => $path,
         ]);
-         
+        DepartmentProject::create([
+            'project_id' => $project->id,
+            'department_id' => $request->department
+        ]);
 
         return redirect()->route('project.index');
     }
 
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $project = Project::find($id);
+        $image = asset($project->image);
+        $this->destroyImage($image);
 
         $project->delete();
-        
+
 
         return redirect()->back();
     }
-
-
 }

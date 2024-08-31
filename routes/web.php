@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
         return view('admin.index');
     })->name('dashboard');
     Route::get('/allProjects', [ProjectController::class, 'index'])->name('project.index');
-    Route::get('/createProject', [ProjectController::class, 'createPage'])->name('project.create.page');
+    Route::get('/createProject', [ProjectController::class, 'create'])->name('project.create.page');
     Route::post('/createProject', [ProjectController::class, 'store'])->name('project.store');
     Route::delete('/createProject/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
 });
