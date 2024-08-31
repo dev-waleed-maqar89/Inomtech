@@ -18,17 +18,17 @@
  ============================================ -->
 
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="./assets/css/plugins/all.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/plugins/all.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/flaticon.css">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="./assets/css/plugins/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/aos.css">
-    <link rel="stylesheet" href="./assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/aos.css">
+    <link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
@@ -67,13 +67,13 @@
                     <div class="header-menu d-none d-lg-block">
                         <ul class="main-menu">
                             <li class="active-menu">
-                                <a href="#">Home</a>
+                                <a href="{{ route('index') }}">Home</a>
                             </li>
                             <li>
-                                <a href="#about-us">About Us</a>
+                                <a href="{{ route('index') }}#about-us">About Us</a>
                             </li>
                             <li>
-                                <a href="#choose-us">Service</a>
+                                <a href="{{ route('index') }}#choose-us">Service</a>
                             </li>
                             <li>
                                 <a href="{{ route('switchLang', 'ar') }}" lang="ar">عربي</a>

@@ -12,28 +12,28 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo9.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo9.png">
 
     <!-- CSS
  ============================================ -->
 
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="./assets/css/plugins/all.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/plugins/all.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/flaticon.css">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="./assets/css/plugins/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/aos.css">
-    <link rel="stylesheet" href="./assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/aos.css">
+    <link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css"> -->
+    <!-- <link rel="stylesheet" href="/assets/css/vendor/plugins.min.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css"> -->
 
     <style>
         .number {
@@ -67,7 +67,7 @@
                 <div class="header-wrap">
 
                     <div class="header-logo">
-                        <a href="#"><img src="assets/images/logom.jpg" alt=""></a>
+                        <a href="#"><img src="/assets/images/logom.jpg" alt=""></a>
 
                     </div>
 
@@ -75,13 +75,13 @@
 
                         <ul class="main-menu">
                             <li class="active-menu">
-                                <a href="#">الرئيسية</a>
+                                <a href="{{ route('index') }}">الرئيسية</a>
                             </li>
                             <li>
-                                <a href="#about-us">من نحن</a>
+                                <a href="{{ route('index') }}#about-us">من نحن</a>
                             </li>
                             <li>
-                                <a href="#choose-us">منتجاتنا</a>
+                                <a href="{{ route('index') }}#choose-us">منتجاتنا</a>
                             </li>
                             <li>
                                 <a href="{{ route('switchLang', 'en') }}" lang="ar">EN</a>

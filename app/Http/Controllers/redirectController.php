@@ -57,4 +57,17 @@ class redirectController extends Controller
         session()->put('locale', $lang);
         return redirect()->back();
     }
+
+    // Show department / Services
+    public function showService($slug)
+    {
+        $name = str_replace('-', ' ', $slug);
+        $department = Department::where('name_en', $name)->first();
+        if ($department) {
+            $projects = $department->projects()->paginate(12);
+            return view('frontend.departments.show', compact(['department', 'projects']));
+        }
+
+        abort(404);
+    }
 }

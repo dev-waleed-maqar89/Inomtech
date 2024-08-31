@@ -129,28 +129,28 @@
 
         <!-- JS
     ============================================ -->
-        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="/assets/js/vendor/modernizr-3.11.2.min.js"></script>
 
         <!-- Bootstrap JS -->
-        <script src="assets/js/plugins/popper.min.js"></script>
-        <script src="assets/js/plugins/bootstrap.min.js"></script>
+        <script src="/assets/js/plugins/popper.min.js"></script>
+        <script src="/assets/js/plugins/bootstrap.min.js"></script>
 
         <!-- Plugins JS -->
-        <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-        <script src="assets/js/plugins/aos.js"></script>
-        <script src="assets/js/plugins/waypoints.min.js"></script>
-        <script src="assets/js/plugins/back-to-top.js"></script>
-        <script src="assets/js/plugins/jquery.counterup.min.js"></script>
-        <script src="assets/js/plugins/appear.min.js"></script>
-        <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/js/plugins/swiper-bundle.min.js"></script>
+        <script src="/assets/js/plugins/aos.js"></script>
+        <script src="/assets/js/plugins/waypoints.min.js"></script>
+        <script src="/assets/js/plugins/back-to-top.js"></script>
+        <script src="/assets/js/plugins/jquery.counterup.min.js"></script>
+        <script src="/assets/js/plugins/appear.min.js"></script>
+        <script src="/assets/js/plugins/jquery.magnific-popup.min.js"></script>
 
 
         <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
 
 
         <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
+        <script src="/assets/js/main.js"></script>
 
         </body>
 

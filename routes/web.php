@@ -21,6 +21,7 @@ Route::get('/', [redirectController::class, 'index'])->name('index');
 // Language switching
 
 Route::get('/lang/{lang}', [redirectController::class, 'switchLang'])->name('switchLang');
+Route::get('/services/{service}', [redirectController::class, 'showService'])->name('department.show');
 
 //
 // Route::get('/dashboard', function () {

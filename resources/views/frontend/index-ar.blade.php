@@ -118,7 +118,9 @@
                                     <img src="assets/images/ser-icon9.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="service.html">{{ $department->name }} </a></h3>
+                                    <h3 class="title"><a
+                                            href="{{ route('department.show', $department->slug) }}">{{ $department->name }}
+                                        </a></h3>
                                     <p>{!! $department->description !!}</p>
                                 </div>
                             </div>
