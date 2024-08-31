@@ -22,9 +22,9 @@ Route::get('/', [redirectController::class, 'index'])->name('index');
 Route::get('/lang/{lang}', [redirectController::class, 'switchLang'])->name('switchLang');
 
 //
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('admin.index');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,7 +36,12 @@ require __DIR__ . '/auth.php';
 
 //projects
 
-Route::get('/allProjects', [ProjectController::class, 'index'])->name('project.index');
-Route::get('/createProject', [ProjectController::class, 'createPage'])->name('project.create.page');
-Route::post('/createProject', [ProjectController::class, 'store'])->name('project.store');
-Route::delete('/createProject/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    })->name('dashboard');
+    Route::get('/allProjects', [ProjectController::class, 'index'])->name('project.index');
+    Route::get('/createProject', [ProjectController::class, 'createPage'])->name('project.create.page');
+    Route::post('/createProject', [ProjectController::class, 'store'])->name('project.store');
+    Route::delete('/createProject/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
+});
