@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Dashboard\CreateProjectRequest;
 use App\Http\Traits\ImageTrait;
 use App\Models\Department;
 use App\Models\DepartmentProject;
@@ -31,7 +32,7 @@ class ProjectController extends Controller
         return view('admin.projects.create', compact('departments'));
     }
 
-    public function store(Request $request)
+    public function store(CreateProjectRequest $request)
     {
         $path = '';
         if ($request->hasFile('image')) {
@@ -46,6 +47,7 @@ class ProjectController extends Controller
             'name_ar' => $request->name_ar,
             'content_en' => $request->content_en,
             'content_ar' => $request->content_ar,
+            'department_id' => $request->department_id,
             'link' => $request->link,
             'image' => $path,
         ]);

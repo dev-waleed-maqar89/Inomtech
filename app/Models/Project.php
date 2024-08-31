@@ -12,7 +12,7 @@ class Project extends Model
 
     public function departament()
     {
-        return $this->hasOneThrough(Department::class, DepartmentProject::class, 'project_id', 'id', 'id', 'department_id');
+        return $this->belongsTo(Department::class);
     }
 
     protected $guarded = [];

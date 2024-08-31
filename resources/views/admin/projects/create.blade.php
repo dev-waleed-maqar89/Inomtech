@@ -105,6 +105,9 @@
                                 @empty
                                 @endforelse
                             </select>
+                            @error('department_id')
+                                <div class="text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                     </div>
