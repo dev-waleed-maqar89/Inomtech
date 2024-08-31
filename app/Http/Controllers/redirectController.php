@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use Illuminate\Http\Request;
 
 class redirectController extends Controller
@@ -12,7 +13,8 @@ class redirectController extends Controller
     {
 
         $lang = session()->get('locale') ?? 'en';
-        return view('frontend.index-' . $lang);
+        $departments = Department::all();
+        return view('frontend.index-' . $lang, compact('departments'));
     }
 
     public function about()

@@ -108,74 +108,26 @@
 
     <!-- Service Start -->
     <div class="section techwix-service-section-03" style="background-image: url(assets/images/bg/service-bg3.jpg);">
-        <div class="container" id="more">
+        <div class="container">
             <!-- Service Wrap Start -->
             <div class="service-wrap-03">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon9.png" alt="">
+                    @forelse ($departments as $department)
+                        <div class="col-xl-3 col-md-6">
+                            <!-- Service Item Start -->
+                            <div class="service-item-03">
+                                <div class="service-img">
+                                    <img src="assets/images/ser-icon9.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="service.html">{{ $department->name }} </a></h3>
+                                    <p>{!! $department->description !!}</p>
+                                </div>
                             </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">Web development</a></h3>
-                                <p>Web development involves creating and maintaining websites or web applications.
-                                    It encompasses front-end (client-side) and back-end (server-side) development,
-                                    ensuring functionality, responsiveness, and user experience.</p>
-
-                            </div>
+                            <!-- Service Item End -->
                         </div>
-                        <!-- Service Item End -->
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon10.png" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">Mobile application</a></h3>
-                                <p>AMobile application development involves creating software applications for
-                                    smartphones and tablets. It includes designing, coding, testing, and deploying
-                                    apps to provide functionality, entertainment, or information to users on-the-go.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Service Item End -->
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon11.png" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">Digital marketing Services</a></h3>
-                                <p>
-                                    Digital marketing services involve leveraging online channels to promote
-                                    products or services. This includes strategies such as SEO, social media
-                                    marketing, email campaigns, and content creation for effective online
-                                    visibility.</p>
-                            </div>
-                        </div>
-                        <!-- Service Item End -->
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon12.png" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">Business Development </a></h3>
-                                <p>Business development focuses on creating and implementing growth opportunities
-                                    through strategic partnerships, market expansion, and customer acquisition,
-                                    ultimately enhancing a company's revenue and market presence.</p>
-                            </div>
-                        </div>
-                        <!-- Service Item End -->
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
             </div>
             <!-- Service Wrap End -->

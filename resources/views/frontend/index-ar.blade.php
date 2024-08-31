@@ -110,67 +110,22 @@
             <!-- Service Wrap Start -->
             <div class="service-wrap-03">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon9.png" alt="">
+                    @forelse ($departments as $department)
+                        <div class="col-xl-3 col-md-6">
+                            <!-- Service Item Start -->
+                            <div class="service-item-03">
+                                <div class="service-img">
+                                    <img src="assets/images/ser-icon9.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="service.html">{{ $department->name }} </a></h3>
+                                    <p>{!! $department->description !!}</p>
+                                </div>
                             </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">خدمة تطوير الويب </a></h3>
-                                <p>خدمة تطوير الويب هي عملية بناء وتطوير مواقع الويب وتطبيقات الويب التي تعمل عبر
-                                    الإنترنت. تهدف خدمة تطوير الويب إلى إنشاء مواقع وتطبيقات ويب ذات وظائف وأداء
-                                    ممتازين وتجربة مستخدم فعالة</p>
-                            </div>
+                            <!-- Service Item End -->
                         </div>
-                        <!-- Service Item End -->
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon10.png" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">خدمة تطبيقات الجوال </a></h3>
-                                <p>خدمة تطبيقات الجوال هي عملية تصميم وتطوير التطبيقات التي تعمل على أجهزة الهواتف
-                                    المحمولة مثل الهواتف الذكية والأجهزة اللوحية. تهدف خدمة تطبيقات الجوال إلى توفير
-                                    تجربة استخدام مريحة وسلسة ومتكاملة للمستخدمين على الأجهزة المحمولة</p>
-                            </div>
-                        </div>
-                        <!-- Service Item End -->
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon11.png" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">خدمة التسويق الإلكتروني </a></h3>
-                                <p>
-                                    خدمة التسويق الإلكتروني وهي عبارة عن استخدام الوسائط الرقمية والمنصات
-                                    الإلكترونية للترويج والتسويق للمنتجات والخدمات. تهدف هذه الخدمة إلى زيادة الوعي
-                                    والانتشار لعلامة تجارية معينة، وزيادة المبيعات والعملاء المحتملين .</p>
-                            </div>
-                        </div>
-                        <!-- Service Item End -->
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- Service Item Start -->
-                        <div class="service-item-03">
-                            <div class="service-img">
-                                <img src="assets/images/ser-icon12.png" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3 class="title"><a href="service.html">خدمة تطوير الأعمال </a></h3>
-                                <p>خدمة تطوير الأعمال وهي تعنى تحسين وتوسيع نطاق العمل والنمو الاستراتيجي للشركات.
-                                    تهدف هذه الخدمة إلى تحقيق النجاح والاستدامة عن طريق تطوير استراتيجيات جديدة
-                                    وإيجاد فرص جديدة لتحقيق النمو والتوسع .</p>
-                            </div>
-                        </div>
-                        <!-- Service Item End -->
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
             </div>
             <!-- Service Wrap End -->

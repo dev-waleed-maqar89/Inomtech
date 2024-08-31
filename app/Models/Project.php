@@ -20,6 +20,10 @@ class Project extends Model
         $lang = session()->get('locale') ?? 'en';
         return $this->{'name_' . $lang};
     }
-
+    public function getcontentAttribute()
+    {
+        $lang = session()->get('locale') ?? 'en';
+        return $this->{'content_' . $lang};
+    }
     protected $guarded = [];
 }
