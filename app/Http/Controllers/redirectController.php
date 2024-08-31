@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class redirectController extends Controller
 {
@@ -55,6 +56,7 @@ class redirectController extends Controller
     public function switchLang($lang)
     {
         session()->put('locale', $lang);
+        App::setLocale($lang);
         return redirect()->back();
     }
 
