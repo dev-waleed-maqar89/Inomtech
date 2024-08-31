@@ -6,55 +6,53 @@ use Illuminate\Http\Request;
 
 class redirectController extends Controller
 {
-    
 
-    public function about() 
+
+    public function index()
+    {
+
+        $lang = session()->get('locale') ?? 'en';
+        return view('frontend.index-' . $lang);
+    }
+
+    public function about()
     {
 
         return view('frontend.about');
-
-
-    } 
-
-    public function index() 
-    {
-
-        return view('frontend.index');
-
-
     }
 
-    public function services() 
+    public function services()
     {
 
         return view('frontend.services');
+    }
 
 
-    } 
 
-
-    
-    public function aboutAR() 
+    public function aboutAR()
     {
 
         return view('frontend.about-ar');
+    }
 
-
-    } 
-
-    public function indexAR() 
+    public function indexAR()
     {
 
         return view('frontend.index-ar');
-
-
     }
 
-    public function servicesAR() 
+    public function servicesAR()
     {
 
         return view('frontend.services-ar');
+    }
 
 
+
+    // language switcher
+    public function switchLang($lang)
+    {
+        session()->put('locale', $lang);
+        return redirect()->back();
     }
 }
