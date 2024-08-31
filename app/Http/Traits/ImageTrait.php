@@ -20,7 +20,6 @@ trait ImageTrait
     public function destroyImage($image)
     {
         if (file_exists($image)) {
-            dd($image);
             unlink($image);
         }
     }

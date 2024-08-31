@@ -15,5 +15,11 @@ class Project extends Model
         return $this->belongsTo(Department::class);
     }
 
+    public function getNameAttribute()
+    {
+        $lang = session()->get('locale') ?? 'en';
+        return $this->{'name_' . $lang};
+    }
+
     protected $guarded = [];
 }

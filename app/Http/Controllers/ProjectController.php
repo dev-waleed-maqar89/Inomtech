@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Dashboard\CreateProjectRequest;
 use App\Http\Traits\ImageTrait;
 use App\Models\Department;
-use App\Models\DepartmentProject;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -37,7 +36,7 @@ class ProjectController extends Controller
         $path = '';
         if ($request->hasFile('image')) {
             $img = $request->file('image');
-            $img = $this->singleImageUpload($img, 'projects', $request->name);
+            $img = $this->singleImageUpload($img, 'projects', $request->name_en);
             $path = $img->getPathname();
         }
 
@@ -51,10 +50,6 @@ class ProjectController extends Controller
             'link' => $request->link,
             'image' => $path,
         ]);
-        DepartmentProject::create([
-            'project_id' => $project->id,
-            'department_id' => $request->department
-        ]);
 
         return redirect()->route('project.index');
     }
@@ -64,7 +59,7 @@ class ProjectController extends Controller
     {
 
         $project = Project::find($id);
-        $image = asset($project->image);
+        $image = public_path($project->image);
         $this->destroyImage($image);
 
         $project->delete();
