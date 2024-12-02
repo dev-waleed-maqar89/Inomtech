@@ -33,4 +33,9 @@ class Department extends Model
         $lang = session()->get('locale') ?? 'en';
         return $this->{'description_' . $lang};
     }
+
+    public function getShortDescreptionAttribute()
+    {
+        return substr($this->description, 0, 155);
+    }
 }

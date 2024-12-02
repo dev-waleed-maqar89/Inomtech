@@ -121,7 +121,7 @@
                                     <h3 class="title"><a
                                             href="{{ route('department.show', $department->slug) }}">{{ $department->name }}
                                         </a></h3>
-                                    <p>{!! $department->description !!}</p>
+                                    <p>{!! $department->short_descreption !!}</p>
                                 </div>
                             </div>
                             <!-- Service Item End -->
